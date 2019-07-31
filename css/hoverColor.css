@@ -1,0 +1,34 @@
+/*
+ * @Author: visnz.zhaoyue 
+ * @Date: 2019-07-30 16:28:06 
+ * @Last Modified by: visnz.zhaoyue.modified
+ * @Last Modified time: 2019-07-31 22:50:28
+ */
+/* 悬停变色 
+ * color pick: https://www.materialui.co/colors
+ *
+ * example: 
+ *     <a class="hoverColor" colorplan="google" href="http://">helloworld</a>
+ */
+ .hoverColor[colorplan="MDCyan"]{
+  --lowcolor: #00838F;
+  /* 800 */
+  --highcolor: #00ACC1;
+  /* 600 */
+}
+@keyframes highlights {
+  0% {background-color:var(--lowcolor);}
+  100% {background-color: var(--highcolor);}
+}
+@keyframes lowlights {
+  0% {background-color: var(--highcolor);}
+  100% {background-color:var(--lowcolor);}
+  }
+.hoverColor {
+  background-color:var(--lowcolor);
+  animation: lowlights 0.5s linear;
+}  
+.hoverColor:hover{
+  animation: highlights 0.5s linear;
+  background-color: var(--highcolor);
+}
