@@ -2,13 +2,15 @@
  * @Author: visnz.zhaoyue 
  * @Date: 2019-08-01 00:56:31 
  * @Last Modified by: visnz.zhaoyue.modified
- * @Last Modified time: 2019-08-01 01:00:52
+ * @Last Modified time: 2019-08-01 01:03:01
  */
 /* 水波紋动画 可与hoverColor结合
  * 完成了基本的按钮点击水波纹，纯粹CSS实现，没能获取鼠标定位
- *
  * example: 
  *   <a href="http://" class="ripple" colorplan="MDCyan">helloworld</a>
+ *
+ *  参考：https://blog.csdn.net/u014291497/article/details/77418434
+ *        https://www.kancloud.cn/dennis/javascriptmethod/261501
  */
  .ripple[colorplan="MDCyan"]{
     --lowcolor: #00838F;
