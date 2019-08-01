@@ -1,0 +1,44 @@
+/*
+ * @Author: visnz.zhaoyue 
+ * @Date: 2019-08-01 11:07:06 
+ * @Last Modified by: visnz.zhaoyue.modified
+ * @Last Modified time: 2019-08-01 21:18:41
+ */
+/* 整体的每一个表格的效果 */
+.recordTable th{
+  padding: 6px 10px ;
+ }/* 表头样式 */
+.recordTable caption{
+  font-size: 150%;
+  padding: 10px 20px;
+}
+ /* 表格内的项目样式 */
+.recordTable tbody tr th{
+  font-weight: normal;
+}
+/* 设置间隔行 */
+.recordTable tbody tr:nth-of-type(2n){
+  background-color: #d9d9d9
+}
+/* 第1列的样式 */
+.recordTable tr th:nth-child(1){
+  text-align: right
+}
+/* 第2列的样式 */
+.recordTable tr th:nth-child(2){
+  text-align: left
+}
+/* 第3列的样式 */
+.recordTable tr th:nth-child(3){
+  text-align: left
+}
+/* 第4列的样式 */
+.recordTable tr th:nth-child(4){
+  text-align: left
+}
+/* 分割行 */
+.recordTable .tableline{
+  padding: 1px;
+  background-color: black;
+}
+
