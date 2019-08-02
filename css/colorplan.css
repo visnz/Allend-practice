@@ -1,0 +1,231 @@
+/*
+ * @Author: visnz.zhaoyue 
+ * @Date: 2019-08-01 09:49:01 
+ * @Last Modified by: visnz.zhaoyue.modified
+ * @Last Modified time: 2019-08-01 10:13:56
+ */
+/*
+ * color pick: https://www.materialui.co/colors
+ * color table: https://material-ui.com/customization/color/
+ */
+[colorplan="red"]{
+    --color100: #ffcdd2;
+    --color200: #ef9a9a;
+    --color300: #e57373;
+    --color400: #ef5350;
+    --color500: #f44336;
+    --color600: #e53935;
+    --color700: #d32f2f;
+    --color800: #c62828;
+    --color900: #b71c1c;
+}
+[colorplan="pink"]{
+    --color100: #F8BBD0;
+    --color200: #F48FB1;
+    --color300: #F06292;
+    --color400: #EC407A;
+    --color500: #E91E63;
+    --color600: #D81B60;
+    --color700: #C2185B;
+    --color800: #AD1457;
+    --color900: #880E4F;
+}
+[colorplan="purple"]{
+    --color100: #E1BEE7;
+    --color200: #CE93D8;
+    --color300: #BA68C8;
+    --color400: #AB47BC;
+    --color500: #9C27B0;
+    --color600: #8E24AA;
+    --color700: #7B1FA2;
+    --color800: #6A1B9A;
+    --color900: #4A148C;
+}
+[colorplan="deeppurple"],[colorplan="deep purple"]{
+    --color100: #D1C4E9;
+    --color200: #B39DDB;
+    --color300: #9575CD;
+    --color400: #7E57C2;
+    --color500: #673AB7;
+    --color600: #5E35B1;
+    --color700: #512DA8;
+    --color800: #4527A0;
+    --color900: #311B92;
+}
+
+[colorplan="indigo"]{
+    --color100: #c5cae9;
+    --color200: #9fa8da;
+    --color300: #7986cb;
+    --color400: #5c6bc0;
+    --color500: #3f51b5;
+    --color600: #3949ab;
+    --color700: #303f9f;
+    --color800: #283593;
+    --color900: #1a237e;
+}
+[colorplan="blue"]{
+    --color100: #bbdefb;
+    --color200: #90caf9;
+    --color300: #64b5f6;
+    --color400: #42a5f5;
+    --color500: #2196f3;
+    --color600: #1e88e5;
+    --color700: #1976d2;
+    --color800: #1565c0;
+    --color900: #0d47a1;
+}
+[colorplan="lightblue"],[colorplan="light blue"]{
+    --color100: #b3e5fc;
+    --color200: #81d4fa;
+    --color300: #4fc3f7;
+    --color400: #29b6f6;
+    --color500: #03a9f4;
+    --color600: #039be5;
+    --color700: #0288d1;
+    --color800: #0277bd;
+    --color900: #01579b;
+}
+
+[colorplan="cyan"]{
+    --color100: #b2ebf2;
+    --color200: #80deea;
+    --color300: #4dd0e1;
+    --color400: #26c6da;
+    --color500: #00bcd4;
+    --color600: #00acc1;
+    --color700: #0097a7;
+    --color800: #00838f;
+    --color900: #006064;
+}
+
+[colorplan="teal"]{
+    --color100: #b2dfdb;
+    --color200: #80cbc4;
+    --color300: #4db6ac;
+    --color400: #26a69a;
+    --color500: #009688;
+    --color600: #00897b;
+    --color700: #00796b;
+    --color800: #00695c;
+    --color900: #004d40;
+}
+
+[colorplan="green"]{
+    --color100: #c8e6c9;
+    --color200: #a5d6a7;
+    --color300: #81c784;
+    --color400: #66bb6a;
+    --color500: #4caf50;
+    --color600: #43a047;
+    --color700: #388e3c;
+    --color800: #2e7d32;
+    --color900: #1b5e20;
+}
+
+[colorplan="lightgreen"],[colorplan="light green"]{
+    --color100: #dcedc8;
+    --color200: #c5e1a5;
+    --color300: #aed581;
+    --color400: #9ccc65;
+    --color500: #8bc34a;
+    --color600: #7cb342;
+    --color700: #689f38;
+    --color800: #558b2f;
+    --color900: #33691e;
+}
+
+[colorplan="lime"]{
+    --color100: #f0f4c3;
+    --color200: #e6ee9c;
+    --color300: #dce775;
+    --color400: #d4e157;
+    --color500: #cddc39;
+    --color600: #c0ca33;
+    --color700: #afb42b;
+    --color800: #9e9d24;
+    --color900: #827717;
+}
+
+[colorplan="yellow"]{
+    --color100: #fff9c4;
+    --color200: #fff59d;
+    --color300: #fff176;
+    --color400: #ffee58;
+    --color500: #ffeb3b;
+    --color600: #fdd835;
+    --color700: #fbc02d;
+    --color800: #f9a825;
+    --color900: #f57f17;
+}
+
+[colorplan="amber"]{
+    --color100: #ffecb3;
+    --color200: #ffe082;
+    --color300: #ffd54f;
+    --color400: #ffca28;
+    --color500: #ffc107;
+    --color600: #ffb300;
+    --color700: #ffa000;
+    --color800: #ff8f00;
+    --color900: #ff6f00;
+}
+
+[colorplan="orange"]{
+    --color100: #ffe0b2;
+    --color200: #ffcc80;
+    --color300: #ffb74d;
+    --color400: #ffa726;
+    --color500: #ff9800;
+    --color600: #fb8c00;
+    --color700: #f57c00;
+    --color800: #ef6c00;
+    --color900: #e65100;
+}
+
+[colorplan="deeporange"],[colorplan="deep orange"]{
+    --color100: #ffccbc;
+    --color200: #ffab91;
+    --color300: #ff8a65;
+    --color400: #ff7043;
+    --color500: #ff5722;
+    --color600: #f4511e;
+    --color700: #e64a19;
+    --color800: #d84315;
+    --color900: #bf360c;
+}
+
+[colorplan="brown"]{
+    --color100: #d7ccc8;
+    --color200: #bcaaa4;
+    --color300: #a1887f;
+    --color400: #8d6e63;
+    --color500: #795548;
+    --color600: #6d4c41;
+    --color700: #5d4037;
+    --color800: #4e342e;
+    --color900: #3e2723;
+}
+
+[colorplan="grey"]{
+    --color100: #f5f5f5;
+    --color200: #eeeeee;
+    --color300: #e0e0e0;
+    --color400: #bdbdbd;
+    --color500: #9e9e9e;
+    --color600: #757575;
+    --color700: #616161;
+    --color800: #424242;
+    --color900: #212121;
+}
+[colorplan="bluegrey"],[colorplan="blue grey"]{
+    --color100: #cfd8dc;
+    --color200: #b0bec5;
+    --color300: #90a4ae;
+    --color400: #78909c;
+    --color500: #607d8b;
+    --color600: #546e7a;
+    --color700: #455a64;
+    --color800: #37474f;
+    --color900: #263238;
+}

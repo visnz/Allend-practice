@@ -1,0 +1,61 @@
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"> </script>
+    <script type="text/javascript">
+    // 载入页面后获取每个tabs的默认激活
+    window.onload = function () {
+        $(".tabs").each((i,e)=>{picktab("#"+e.id,parseInt($("#"+e.id).attr("active")))})
+    }
+
+    function picktab(sectionID,index){
+        /**
+         * sectionID: 指明需要求改的id
+         * index: 从0开始
+         */
+        $(sectionID+" .onetab").attr("active","false")
+        $(sectionID+" .onetab").eq(index).attr("active","true")
+        // $(sectionID).children(".tabcontent").attr("active","false")
+        $(sectionID+" .tabcontent").hide()
+        // $(sectionID).children(".tabcontent").eq(index).attr("active","true")
+        $(sectionID+" .tabcontent").eq(index).show()
+    }
+    </script>
+    <section colorplan="blue" class="tabs" id="tabshow01" active="0">
+        <div  class="tabbar">
+            <a class="onetab" colorplan="blue" active="false" onclick="picktab('#tabshow01',$('#tabshow01 .onetab').index(this))">首页</a>
+            <a class="onetab" colorplan="blue" active="false" onclick="picktab('#tabshow01',$('#tabshow01 .onetab').index(this))">关于</a>
+            <a class="onetab" colorplan="blue" active="false" onclick="picktab('#tabshow01',$('#tabshow01 .onetab').index(this))">关于关于</a>
+            <a class="onetab" colorplan="blue" active="false" onclick="picktab('#tabshow01',$('#tabshow01 .onetab').index(this))">关于关于</a>
+            <a class="onetab" colorplan="blue" active="false" onclick="picktab('#tabshow01',$('#tabshow01 .onetab').index(this))">关于关于</a>
+            <a class="onetab" colorplan="blue" active="false" onclick="picktab('#tabshow01',$('#tabshow01 .onetab').index(this))">关于关于</a>
+        </div>
+        <div>
+        <article class="tabcontent">
+                使用CSS实现按钮点击波纹效果
+        </article>
+        <article class="tabcontent">  
+                <section colorplan="green" class="tabs" id="tabshow02" active="2">
+                        <div  class="tabbar">
+                            <a class="onetab" colorplan="green" active="false" onclick="picktab('#tabshow02',$('#tabshow02 .onetab').index(this))">首页</a>
+                            <a class="onetab" colorplan="green" active="false" onclick="picktab('#tabshow02',$('#tabshow02 .onetab').index(this))">关于</a>
+                            <a class="onetab" colorplan="green" active="false" onclick="picktab('#tabshow02',$('#tabshow02 .onetab').index(this))">关于关于</a>
+                            <a class="onetab" colorplan="green" active="false" onclick="picktab('#tabshow02',$('#tabshow02 .onetab').index(this))">关于关于</a>
+                            <a class="onetab" colorplan="green" active="false" onclick="picktab('#tabshow02',$('#tabshow02 .onetab').index(this))">关于关于</a>
+                            <a class="onetab" colorplan="green" active="false" onclick="picktab('#tabshow02',$('#tabshow02 .onetab').index(this))">关于关于</a>
+                        </div>
+                        <div>
+                        <article class="tabcontent">
+                                使用CSS实现按钮点击波纹效果
+                        </article>
+                        <article class="tabcontent">  
+                
+                        </article>
+                        <article class="tabcontent">  
+                                    background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+                        </article>
+                    </div>
+                </section>
+        </article>
+        <article class="tabcontent">  
+                    background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+        </article>
+    </div>
+</section>

@@ -2,7 +2,7 @@
  * @Author: visnz.zhaoyue 
  * @Date: 2019-08-01 00:56:31 
  * @Last Modified by: visnz.zhaoyue.modified
- * @Last Modified time: 2019-08-01 01:03:01
+ * @Last Modified time: 2019-08-02 00:25:48
  */
 /* 水波紋动画 可与hoverColor结合
  * 完成了基本的按钮点击水波纹，纯粹CSS实现，没能获取鼠标定位
@@ -12,57 +12,51 @@
  *  参考：https://blog.csdn.net/u014291497/article/details/77418434
  *        https://www.kancloud.cn/dennis/javascriptmethod/261501
  */
- .ripple[colorplan="MDCyan"]{
-    --lowcolor: #00838F;
-    /* 800 */
-    --highcolor: #00ACC1;
-    /* 600 */
-  }
-  
-  .ripple {
-    background-color: var(--lowcolor);
-    /* 设置文字属性 */
-    text-decoration:none;
-    color: #02273a;
-    text-align: center;
-    /* 设置文字无法选择： */
-    user-select: none;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    /* 设置排版属性 */
-    padding: 13px 15px 12px 15px;
-    display: block;
-    position: absolute;
-    overflow: hidden;
-  }
-  .ripple:visited{
-    /* 访问后不变色 */
-    color: unset;
-  }
-  .ripple:hover{
-    /* 变亮 */
-    background-color: var(--highcolor);
-  }
-  .ripple:after {
-    /* 获取排版位置 */
-    content: "";
-    position: absolute;
-    top: 2px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-  
-    /* 直接构造结束状态 */
-    background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
-    transform: scale(10, 10);
-    opacity: 0;
-    transition: transform .3s, opacity .5s;
-  } 
-  .ripple:active::after{
-    transform: scale(0, 0);
-    opacity: .3;
-    transition: 0s;
-    /* //设置初始状态 */
-  }
-  
+@import "./colorplan.css";
+
+.ripple {
+	background-color: var(--color500);
+	/* 设置文字属性 */
+	text-decoration: none;
+	color: var(--color800);
+	text-align: center;
+	/* 设置文字无法选择： */
+	user-select: none;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	/* 设置排版属性 */
+	padding: 13px 15px 12px 15px;
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+.ripple:visited {
+	/* 访问后不变色 */
+	color: unset;
+}
+.ripple:hover {
+	/* 变亮 */
+	background-color: var(--color300);
+}
+.ripple:after {
+	/* 获取排版位置 */
+	content: "";
+	position: absolute;
+	top: 2px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+
+	/* 直接构造结束状态 */
+	background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+	transform: scale(15, 15);
+	opacity: 0;
+	transition: transform .3s, opacity .5s;
+}
+.ripple:active::after {
+	transform: scale(0, 0);
+	opacity: .2;
+	transition: 0s;
+	/* //设置初始状态 */
+}
