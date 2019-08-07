@@ -1,0 +1,38 @@
+/*
+ * @Author: visnz.zhaoyue 
+ * @Date: 2019-08-07 17:09:21 
+ * @Last Modified by: visnz.zhaoyue.modified
+ * @Last Modified time: 2019-08-07 18:16:54
+ */
+@import "./colorplan.css";
+
+
+.waterfall .droplets-fall{
+    display: inline-flex;
+    flex-direction: column;
+    /* width: 400px; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
+}
+.waterfall .droplets-fall .droplets {
+    padding: 12px;
+    margin: 6px;
+    max-width: 300px;
+    background-color: var(--color100);
+    display: inline;
+    border-radius: 8px;
+}
+
+.waterfall{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.waterfall .droplets-fall .droplets img{
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 6px;
+}

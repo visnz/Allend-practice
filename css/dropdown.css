@@ -1,0 +1,11 @@
+@import "./colorplan.css";
+.dropdown{
+    float: left;
+}
+.dropdown:hover .dropdown-box {
+    display: block;
+}
+.dropdown-box{
+    display: none;
+    position: absolute;
+}

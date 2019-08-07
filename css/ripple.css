@@ -15,29 +15,8 @@
 @import "./colorplan.css";
 
 .ripple {
-	background-color: var(--color500);
-	/* 设置文字属性 */
-	text-decoration: none;
-	color: var(--color800);
-	text-align: center;
-	/* 设置文字无法选择： */
-	user-select: none;
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
 	/* 设置排版属性 */
-	padding: 13px 15px 12px 15px;
-	display: block;
 	position: relative;
-	overflow: hidden;
-}
-.ripple:visited {
-	/* 访问后不变色 */
-	color: unset;
-}
-.ripple:hover {
-	/* 变亮 */
-	background-color: var(--color300);
 }
 .ripple:after {
 	/* 获取排版位置 */
