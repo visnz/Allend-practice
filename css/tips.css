@@ -1,0 +1,35 @@
+/*
+ * @Author: visnz.zhaoyue 
+ * @Date: 2019-08-07 16:23:34 
+ * @Last Modified by: visnz.zhaoyue.modified
+ * @Last Modified time: 2019-08-07 17:06:35
+ */
+@import "./colorplan.css";
+.tips .tips-text{
+    background-color:  var(--color300);
+    margin-left: 15px;
+    padding: 2px 10px 2px 15px;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    opacity: 0;
+    transition:  opacity .5s;
+}
+.tips:hover .tips-text{
+    display: inline;
+    opacity: 0.8;
+    transition: opacity .5s;
+}
+.tips .tips-text::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var(--color100) transparent transparent;
+}
+.tips{
+    position: relative;
+}
