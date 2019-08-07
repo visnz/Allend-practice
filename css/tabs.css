@@ -17,10 +17,10 @@
 }
 /* 激活变色，与背景板同色 */
 .onetab[active="true"],.tabcontent{
-  background-color: var(--color200);
+  background-color: var(--color500);
 }
 .onetab{
-  background-color: var(--color400);
+  background-color: var(--color300);
   display: inline;
   align-items: left;
 }

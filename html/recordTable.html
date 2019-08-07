@@ -1,49 +1,72 @@
-<link href="recordtable.css" rel="stylesheet" type="text/css">
+<!DOCTYPE html>
+<html>
 
+<head>
+    <link href="recordtable.css" rel="stylesheet" type="text/css">
+    <title>recordtable</title>
+</head>
 
-    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"> </script>
-    <script type="text/javascript">
-    var first=true;
-    function listRecord(){
-        if(first){
-            first=false;
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"> </script>
+<script type="text/javascript">
+    var first = true;
+    function listRecord() {
+        if (first) {
+            first = false;
             CORSReqGet('http://localhost:3000/listRecord')
-        }else{
+        } else {
             CORSReqGet('http://localhost:3000/listRecordAppend')
         }
-        function CORSReqGet(url){
+        function CORSReqGet(url) {
             // 此函数来解决跨域调用的问题
-            xhr=new XMLHttpRequest()
-            xhr.open("GET",url,true)
+            xhr = new XMLHttpRequest()
+            xhr.open("GET", url, true)
             xhr.send()
             // 等得到报文读取内容，并追加添加到table中
-            xhr.onreadystatechange = function(){
-                if(xhr.readyState === 4 && xhr.status === 200){
-                    book=JSON.parse(xhr.responseText)
-                    var index=0
-                    for(i in book){
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    book = JSON.parse(xhr.responseText)
+                    var index = 0
+                    for (i in book) {
                         $(".recordTable>tbody").append(
-                            "<tr><th scope='row'>"+i+"</th>"+
-                                "<th>"+(new Date(book[i].time)).toLocaleTimeString() +"</th>"+
-                                "<th>"+book[i].exec+"</th>"+
-                                "<th>"+book[i].result+"</th></tr>");
-                            index++;
+                            "<tr><th scope='row'>" + i + "</th>" +
+                            "<th>" + (new Date(book[i].time)).toLocaleTimeString() + "</th>" +
+                            "<th>" + book[i].exec + "</th>" +
+                            "<th>" + book[i].result + "</th></tr>");
+                        index++;
                     }
                     $(".recordTable>tfoot").replaceWith(
-                        "<tr><th colspan='10' class='tableline'></th></tr><tr><th>"+index+"</th><th scope='row colspan='1'>Total</th></tr>"
+                        "<tr><th colspan='10' class='tableline'></th></tr><tr><th>" + index + "</th><th scope='row colspan='1'>Total</th></tr>"
                     );
                 }
             }
         }
     }
-    </script>
+</script>
 
 
 <body>
     <a id="color" class="ripple hoverColor" colorplan="orange" onclick="listRecord()">helloworld</a>
-    <table class="recordTable"><caption>Function Executed Status Record</caption>
-        <thead><tr><th scope="col">Index</th><th scope="col">StartTime</th><th scope="col">Function</th><th scope="col">Result</th></tr></thead>
-        <tbody><tr><th colspan="10" class="tableline" /></tr></tbody>
-        <tfoot><tr><th colspan="10" class="tableline"></th></tr></tfoot>
+    <table class="recordTable">
+        <caption>Function Executed Status Record</caption>
+        <thead>
+            <tr>
+                <th scope="col">Index</th>
+                <th scope="col">StartTime</th>
+                <th scope="col">Function</th>
+                <th scope="col">Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="10" class="tableline" />
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="10" class="tableline"></th>
+            </tr>
+        </tfoot>
     </table>
 </body>
+
+</html>
