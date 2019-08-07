@@ -2,19 +2,19 @@
  * @Author: visnz.zhaoyue 
  * @Date: 2019-08-07 17:09:21 
  * @Last Modified by: visnz.zhaoyue.modified
- * @Last Modified time: 2019-08-07 17:18:13
+ * @Last Modified time: 2019-08-07 18:16:54
  */
 @import "./colorplan.css";
 
 
-.droplets-fall{
+.waterfall .droplets-fall{
     display: inline-flex;
     flex-direction: column;
     /* width: 400px; */
     flex-wrap: wrap;
     /* justify-content: center; */
 }
-.droplets {
+.waterfall .droplets-fall .droplets {
     padding: 12px;
     margin: 6px;
     max-width: 300px;
@@ -30,7 +30,7 @@
     flex-wrap: wrap;
 }
 
-.droplets img{
+.waterfall .droplets-fall .droplets img{
     display: block;
     max-width: 300px;
     margin: 0 auto;

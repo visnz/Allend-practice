@@ -1,0 +1,46 @@
+/*
+ * @Author: visnz.zhaoyue 
+ * @Date: 2019-08-07 18:13:26 
+ * @Last Modified by: visnz.zhaoyue.modified
+ * @Last Modified time: 2019-08-07 19:13:38
+ */
+
+@import "./colorplan.css";
+:root{
+    scroll-behavior:smooth;
+    --size: 50;
+}
+
+.gotop{
+    height: calc(var(--size) * 1px); 
+    width: calc(var(--size) * 1px);
+    border-radius: 100%;
+    background-color: var(--color400);
+    /* 獲取大小、形狀、顏色 */
+    position:fixed;
+    right: calc(var(--size) * 0.3px);
+    bottom: calc(var(--size) * 0.3px);
+    z-index: 1;
+    /* 獲取位置 */
+    opacity: 0.3;
+    transform: scale(1, 1);
+    transition: transform .5s, opacity .5s;
+    /* 獲取動畫 */
+}
+.gotop:hover{
+    opacity: 0.8;
+    transform: scale(1.2, 1.2);
+    transition: transform .5s, opacity .5s;
+    /* 獲取動畫 */
+}
+.gotop::after{
+    content: "";
+    position: absolute;
+    margin: calc(var(--size) * 0.3px);
+    margin-top: calc(var(--size) * 0.2px);
+    /* 獲取位置 */
+    border-width: calc(var(--size) * 0.2px);
+    border-style: solid;
+    border-color: transparent  transparent var(--color100) transparent;
+    /* 獲取圖形 */
+}
