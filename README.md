@@ -1,9 +1,28 @@
 # Allend-practice
+
 some code practiced of mine recently
-# HCJ
+
 ## 核心资料
-[MDN](https://developer.mozilla.org/zh-CN/docs/Learn)
+
+无基础入门 [Head First HTML与CSS（第2版）](https://book.douban.com/subject/25752357/)
+低基础入门 [MDN Web入门](https://developer.mozilla.org/zh-CN/docs/Learn)
+ES6特性总结与进阶 [阮一峰 ES6tutorial(不是入门用的入门书)](https://es6.ruanyifeng.com/)
+
+## 文章精选
+
+[justjavac前端工程师的入门与进阶](https://shenbao.github.io/2017/04/22/justjavac-live/)
+[8张图让你一步步看清 async/await 和 promise 的执行顺序](https://juejin.im/post/5c0dcf70518825765548502b)
+
+[一步步引导学习css布局](http://zh.learnlayout.com/percent.html)
+[Sass入门指南](https://sass-guidelin.es/zh/)
+[JS进阶：JavaScript最佳实践](https://www.sitepoint.com/premium/books/javascript-best-practice)
+[airbub 官方js规范](https://github.com/airbnb/javascript)
+[ Web 布道师 Christian Heilmann Javascript 最佳实践](https://jinlong.github.io/2013/11/25/javascript-best-practices/)
+[阮一峰 全栈工程师培训材料](https://github.com/ruanyf/jstraining)
+[全栈之路](https://github.com/frank-lam/fullstack-tutorial)
+
 ## 资源链接汇总
+
 [HTML标记验证服务](https://validator.w3.org/)(尽可能以XHTML的标准写HTML内容)
 [快速查詢CSS/HTML與各瀏覽器的支援](https://caniuse.com/)
 [CSS3文档](http://www.w3chtml.com/css3/)
@@ -16,7 +35,10 @@ some code practiced of mine recently
 [字体](https://fonts.google.com/)
 [浏览器音视频兼容情况](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Supported_media_formats#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%83%85%E5%86%B5)
 [HTML支持的媒体](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Supported_media_formats)
-## 其他资料与查漏补缺
-[H5的新API简介](https://www.wikiwand.com/zh-tw/HTML5#/%E6%96%B0%E7%9A%84API)
+[H5的新API简介](https://daisyhawen.gitbooks.io/web-practice-book/content/0_html/03_html5.html)
+[github HCJ 编写规范@AlloyTeam](http://alloyteam.github.io/CodeGuide/)
+[Ajax jQuery 参考手册](https://www.w3school.com.cn/jquery/jquery_ref_ajax.asp)
+## 练习宗旨
 
-
+代码逻辑复杂，但是项目简单，实现的方法可以是函数式、过程式、面向对象（可以去实现一个计算器）
+代码强壮，用户的任何操作，程序能运行
