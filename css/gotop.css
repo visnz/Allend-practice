@@ -2,7 +2,7 @@
  * @Author: visnz.zhaoyue 
  * @Date: 2019-08-07 18:13:26 
  * @Last Modified by: visnz.zhaoyue.modified
- * @Last Modified time: 2019-08-07 19:13:38
+ * @Last Modified time: 2019-08-12 01:39:16
  */
 
 @import "./colorplan.css";
@@ -11,7 +11,7 @@
     --size: 50;
 }
 
-.gotop{
+#gotop{
     height: calc(var(--size) * 1px); 
     width: calc(var(--size) * 1px);
     border-radius: 100%;
@@ -27,13 +27,29 @@
     transition: transform .5s, opacity .5s;
     /* 獲取動畫 */
 }
-.gotop:hover{
-    opacity: 0.8;
+#gotop[stats="fadeIn"]{
+    opacity: .8;
+    transition: transform 1s, opacity .5s;
+}
+#gotop[stats="fadeOut"]{
+    opacity: 0;
+    transition: transform 1s, opacity .5s;
+}
+#navPositive{
+    position: fixed;
+    height: 5px;
+    width: 0%;
+    left: 0;
+    top: 0;
+    background-color: var(--color400);
+}
+#gotop:hover{
+    opacity: 0.9;
     transform: scale(1.2, 1.2);
     transition: transform .5s, opacity .5s;
     /* 獲取動畫 */
 }
-.gotop::after{
+#gotop::after{
     content: "";
     position: absolute;
     margin: calc(var(--size) * 0.3px);

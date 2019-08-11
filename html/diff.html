@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+    <link href="diff.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"> </script>
+    <script type="text/javascript">
+        $("document").ready(() => {
+            $("#diffSubmit").click(() => CORSReqGet("http://localhost:3000/diff"))
+        })
+        function CORSReqGet(url) {
+            var fd = new FormData();
+            fd.append($("#file1").attr("name"), $("#file1")[0].files[0]);
+            fd.append($("#file2").attr("name"), $("#file2")[0].files[0]);
+            $.ajax({
+                url: url,
+                data: fd,
+                processData: false,
+                contentType: false,
+                type: 'POST',
+            }).done(function (diff) {
+                left = "<tbody>", right = "<tbody>"
+                console.log(diff);
+                for (i in diff) {
+                    tmp = diff[i]
+                    diff = '<tr><th class="diff" colorplan="red">';
+                    added = '<tr><th class="added" colorplan="green">';
+                    drop = '<tr><th class="drop" colorplan="grey">';
+                    normal_start = '<tr><th>';
+                    normal_end = '</th></tr>';
+                    switch (tmp[1]) {
+                        case "|":
+                            left += diff + tmp[0] + normal_end
+                            right += diff + tmp[2] + normal_end
+                            break
+                        case ">":
+                            left += drop + tmp[0] + normal_end
+                            right += added + tmp[2] + normal_end
+                            break
+                        case "<":
+                            left += added + tmp[0] + normal_end
+                            right += drop + tmp[2] + normal_end
+                            break
+                        case "(":
+                            left += normal_start + tmp[0] + normal_end
+                            right += normal_start + tmp[0] + normal_end
+                            break
+                    }
+                }
+                $("#diff-left>tbody").replaceWith(left + "</tbody>");
+                $("#diff-right>tbody").replaceWith(right + "</tbody>");
+            })
+        }
+    </script>
+    <title>diff</title>
+</head>
+
+<body>
+    <input type="file" id="file1" name="file1">
+    <input type="file" id="file2" name="file2">
+    <button id="diffSubmit">submit</button>
+    <div class="diff">
+        <table id="diff-left">
+            <thead>
+                <tr>
+                    <th scope="col">File1</th>
+                </tr>
+                <tr>
+                    <th colspan="10" class="tableline" />
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="diff-right">
+            <thead>
+                <tr>
+                    <th scope="col">File2</th>
+                </tr>
+                <tr>
+                    <th colspan="10" class="tableline" />
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

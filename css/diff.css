@@ -1,0 +1,76 @@
+/*
+ * @Author: visnz.zhaoyue 
+ * @Date: 2019-08-08 13:35:53 
+ * @Last Modified by: visnz.zhaoyue.modified
+ * @Last Modified time: 2019-08-10 12:21:42
+ */
+@import "./colorplan.css";
+/* 设置表格排版 */
+.diff {
+	display: flex;
+}
+.diff table,
+.diff thead,
+.diff tbody,
+.diff tfoot,
+.diff tr,
+.diff th {
+	/* 设置各个部分为块显示 */
+	display: block;
+}
+.diff tbody th {
+	/* diff表格靠左显示 */
+	text-align: left;
+}
+.diff table {
+	/* 设置最小表宽度 */
+	min-width: 500px;
+}
+.diff table:nth-child(1) {
+	/* 左列靠右 */
+	margin: 0 0 0 auto;
+}
+.diff table:nth-child(2) {
+	/* 右列靠左 */
+	margin: 0 auto 0 0;
+}
+.diff table thead tr th {
+	/* 表头标题居中 */
+	margin: 0 auto;
+	display: block;
+}
+
+/* 其他设置 */
+.diff table .tableline {
+	/* 表格分割线 */
+	box-sizing: border-box;
+	display: block;
+	padding: 1px;
+	width: 100%;
+	background-color: black;
+}
+
+.diff table tbody tr {
+	padding: 1px;
+}
+.diff table tbody tr .added {
+	background-color: var(--color300);
+}
+.diff table tbody tr .drop {
+	background-color: var(--color500);
+}
+.diff table tbody tr .diff {
+	background-color: var(--color100);
+}
+.diff tbody tr th {
+	font-weight: normal;
+	padding: 0px 8px;
+}
+.diff table tbody tr,
+.diff table tbody tr th {
+	height: 1.5em;
+}
+.diff tbody tr:nth-of-type(2n) {
+	/* 间隔双色背景 */
+	background-color: #eee;
+}
