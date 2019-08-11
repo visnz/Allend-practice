@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="CSS.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" async> </script>
+        <script type="text/javascript">
+            window.onload=()=>{
+                $("#clear").click(()=>{
+                    $('#result').text("")
+                })
+                $("#maximumMoe").change(()=>{
+                    $("#currentlyMoe").attr("max",$("#maximumMoe").val())
+                })
+                $("#currentlyMoe").change(()=>{
+                    console.log($("#currentlyMoe").val());
+                    
+                    $('label[for="currentlyMoe"]').text($("#currentlyMoe").val()+"K")
+                })
+                $("#submit").click(()=>{
+                    var currentlyMoe=parseInt($("#currentlyMoe").val())         // 现在的数量
+                    var maximumMoe=parseInt($("#maximumMoe").val())             // 仓库的最大数量
+                    var producePS=parseFloat($("#producePS").val())               // 每秒产量
+                    var buildingCount=parseInt($("#buildingCount").val())  // 建筑加成
+                    var requirePS=parseFloat($("#requirePS").val())                // 每秒需求
+                    var weather=parseInt($("#weather").val())                    // 天气 -1,0,1 表示
+                    cal(currentlyMoe,maximumMoe,producePS,buildingCount,requirePS,weather).map((i)=>{
+                        $('#result').prepend(i+'<br />')
+                    })
+                    $('#result').prepend('<br />查询结果: <br />')
+                    
+                })
+            }
+        </script>
+
+        <title>0农民猫薄荷量均衡计算器</title>
+    </head>
+    <body>
+        <!-- var currentlyMoe=15000;         // 现在的数量
+        var maximumMoe=55000;             // 仓库的最大数量
+        var producePS=47.5;               // 每秒产量
+        var buildingCount=1.11;  // 建筑加成
+        var requirePS=101.3                // 每秒需求
+        var weather=0                    // 天气 -1,0,1 表示 -->
+        <div>
+            <label>仓库容量</label><input type="number" id="maximumMoe" name="maximumMoe"  min="0" step="5" />
+            <label for="maximumMoe">K</label>
+        </div>
+        <div>
+            <label>现有存量</label><input type="range" id="currentlyMoe" name="currentlyMoe" min="0" max="0" step="1" />
+            <label for="currentlyMoe">K</label>
+        </div>
+        <div>
+            <label>每秒产量</label><input type="number" id="producePS" name="producePS"  min="0" step="0.1" />
+            <label for="producePS">perSecond</label>
+        </div>
+        <div>
+            <label>每秒需求</label><input type="number" id="requirePS" name="requirePS"  min="0" step="0.1" />
+            <label for="requirePS">perSecond</label>
+        </div>
+        <div>
+            <label>水渠水量</label><input type="number" id="buildingCount" name="buildingCount"  min="0" step="1" />
+            <label for="buildingCount">个</label>
+        </div>
+
+        <div>
+            <label>天气</label>
+            <input list="weatherList" id="weather">
+            <datalist id="weatherList">
+                <option value="-1">寒冷</option>
+                <option value="0">正常</option>
+                <option value="1">温暖</option>
+            </datalist>
+        </div>
+        <div>
+            <input id="submit" type="submit">
+            <input id="clear" type="button" value="clear">
+        </div>
+        <div>
+            <label>结果</label>
+            <label id="result"></label>
+        </div>
+    </body>
+    <script src="../js/moe.js" defer> </script>
+</html>
