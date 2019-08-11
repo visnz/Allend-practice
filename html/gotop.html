@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="gotop.css" rel="stylesheet" type="text/css">
-        <title>gotop</title>
-    </head>
-    <body>
-        <a class="gotop" colorplan="green" href="#" target="_self"></a>
-    </body>
+
+<head>
+    <link href="../css/gotop.css" rel="stylesheet" type="text/css">
+    <title>gotop</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" async> </script>
+    <script type="text/javascript">
+        window.onload = () => {
+            // 页面载入时候进行判定
+            navCheck=(positionPercent)=>{
+                $("#gotop").attr("stats",positionPercent>0.1?"fadeIn":"fadeOut")
+                $("#navPositive").css("width",(100*positionPercent)+"%")
+            }
+            navCheck($(window).scrollTop()/($(document).height()-$(window).height()))
+
+            $(window).scroll(()=>{
+                // 页面滚动时候进行判定
+                positionPercent=$(window).scrollTop()/($(document).height()-$(window).height());
+                navCheck(positionPercent)
+            });
+            $(window).resize(()=>{
+                // 页面调整大小时候进行判定
+                positionPercent=$(window).scrollTop()/($(document).height()-$(window).height());
+                navCheck(positionPercent)
+            });
+        };
+
+    </script>
+</head>
+
+<body colorplan="green">
+    <nav id="navPositive"></nav>
+    <a id="gotop"  href="#" target="_self" stats="fadeOut"></a>
+</body>
+
 </html>
