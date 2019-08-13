@@ -13,6 +13,8 @@ const record = require('./tool/history.js').record;
 const listRecord = require('./tool/history.js').listRecord;
 const listRecordAppend = require('./tool/history.js').listRecordAppend;
 const diff = require('./tool/diff.js').diff;
+const dashboard = require('./tool/dashboard.js').dashboard;
+const dashboardRecord = require('./tool/dashboard.js').dashboardRecord;
 
 // 日志模块导入
 var logger = require('log4js').getLogger('main');
@@ -49,17 +51,19 @@ function main() {
             urlargs = querystring.parse(URL.query)  // 获取函数参数
             logger.info('URL function: [', func, '] URL arguments: ', urlargs)
             try {
-                resu = eval(func + '(urlargs,' + debug + ')')//使用veal获取执行函数
-                resu = JSON.stringify(resu)           //编码结果
-                if (needRecord(func)) {
-                    record(recordIndex++, {
-                        'time': Date.now(),
-                        'exec': func + '(' + JSON.stringify(urlargs) + ',' + debug + ')',
-                        'result': resu
-                    })// 记录调用
-                }
-                logger.info('Http Service Response: ', resu)
-                res.end(resu)
+                (async function () {
+                    resu = await eval(func + '(urlargs,' + debug + ')')//使用veal获取执行函数
+                    resu = JSON.stringify(resu)           //编码结果
+                    if (needRecord(func)) {
+                        record(recordIndex++, {
+                            'time': Date.now(),
+                            'exec': func + '(' + JSON.stringify(urlargs) + ',' + debug + ')',
+                            'result': resu
+                        })// 记录调用
+                    }
+                    logger.info('Http Service Response: ', resu)
+                    res.end(resu)
+                })()
             } catch (e) {
                 logger.error(e.toString())
                 res.end("Error ", e.toString())
@@ -112,13 +116,14 @@ function main() {
             } 
         }
     }).listen(port)
-    logger.info('Http Service start, listen in port ', port)
+    logger.info('Http Service start, listen in port ', port,"try: http://localhost:"+port)
 }
 main()
 function canExec(funcName){
-    //来检测函数是否可以被调用
+    //来检测函数是否可以被网页进行外部调用
     switch (funcName) {
         case 'record':
+        case 'dashboardRecord':
             return false
     }
     return true
@@ -132,5 +137,15 @@ function needRecord(funcName) {
     }
     return true
 }
-
+// 这一块的功能是创建另外的线程
+// 持续更新系统信息
+duration=4
+setTimeout(async()=>{
+    // async函数声明
+    while(true){
+        await new Promise(resolve=>setTimeout(resolve,(duration+2)*1000))
+        // 进行同步阻塞,调用dashboard方法
+        dashboardRecord(duration)
+    }
+},0)
 logger.info('Index.js tail, GoodBye')

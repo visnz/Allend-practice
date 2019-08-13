@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="../css/dashboard.css" rel="stylesheet" type="text/css">
+        <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" async> </script>
+        <script src="../lib/dark.js"></script>
+        <script type="text/javascript">
+            window.onload = () => {
+                fetchAll()
+                $("#update").click(() => {
+                    update()
+                })
+            };
+        </script>
+        <title>TITLE</title>
+    </head>
+    <body>
+        <div id="NET" class="dashboard"></div>
+        <div id="IO" class="dashboard"></div>
+        <div id="CPU" class="dashboard"></div>
+        <div id="MEM" class="dashboard"></div>
+        <button id="update">update</button>
+        <input name="step" type="radio" value="2" checked="checked">2<br>
+        <input name="step" type="radio" value="10">10<br>
+        <input name="step" type="radio" value="50">50<br>
+        <input name="step" type="radio" value="100">100
+        <script src="../js/dashboard.js"> </script>
+    </body>
+</html>
