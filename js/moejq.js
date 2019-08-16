@@ -202,11 +202,11 @@ var pao=0
             { DisplayName: "管理职业", timer: verySlowDelay },
             { DisplayName: "小猫升职器", timer: verySlowDelay },
         ]
-    }, {
-        panel: "策略",
-        list: [
-            // { DisplayName: "自动最低农民" },
-        ]
+//     }, {
+//         panel: "策略",
+//         list: [
+//             // { DisplayName: "自动最低农民" },
+//         ]
     }, {
         panel: "合成",
         list: [
