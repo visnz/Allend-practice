@@ -124,6 +124,7 @@ function canExec(funcName){
     switch (funcName) {
         case 'record':
         case 'dashboardRecord':
+        case 'favicon':
             return false
     }
     return true
